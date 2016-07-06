@@ -1,0 +1,29 @@
+// create a name space for the app so it doesn't affect the salesforce style
+#gravity-docusign-mobile {
+  @import "./stylesheets/base.less";
+
+  // reset
+  @import "./stylesheets/reset.less";
+
+  // font-awesome
+  @import "../node_modules/font-awesome/less/font-awesome.less";
+
+  // Layouts
+  @import "./layouts/AppLayout.less";
+
+  // Common
+  @import "./stylesheets/card.less";
+
+  // Pages
+  @import "./pages/SendWithEmailResultsPage.less";
+  @import "./pages/InPersonResultsPage.less";
+
+  // Components
+  @import "./components/CardHeader.less";
+  @import "./components/Template.less";
+  @import "./components/Recipient.less";
+  @import "./components/SendButtons.less";
+  @import "./components/Dropdown.less";
+  @import "./components/Messages.less";
+  @import "./components/Loading.less";
+}

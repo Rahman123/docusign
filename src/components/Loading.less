@@ -1,0 +1,20 @@
+@import "../stylesheets/utils.less";
+
+.wrapper-loading {
+  .position(fixed, 0, 0, 0, 0);
+  .flex(column, nowrap, center, center);
+  background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)),
+                rgba(0,0,0,0.55) no-repeat center;
+  background-size: cover;
+  color: #fff;
+  text-align: center;
+  text-rendering: optimizeLegibility;
+  margin: 0;
+  padding: 15px 10px 15px;
+  z-index: 1000;
+
+  .ds-message {
+    font-size: 4em;
+    font-weight: 100;
+  }
+}

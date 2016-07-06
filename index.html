@@ -1,0 +1,89 @@
+<html>
+  <head>
+    <title>Gravity Template Editor</title>
+
+    <!--
+    <link href="./node_modules/bootstrap/dist/css/bootstrap.min.css" type="text/css" rel="stylesheet" />
+    <link href="./node_modules/font-awesome/css/font-awesome.min.css" type="text/css" rel="stylesheet" />
+    <script src="./node_modules/jquery/dist/jquery.min.js"></script> -->
+    <link href="./fonts/fontface.css" type="text/css" rel="stylesheet" />
+    <script src="./mockData.js"></script>
+
+  </head>
+  <body oncontextmenu="return false">
+    <div id="gravity-docusign-mobile"></div>
+    <script src="static/bundle.js"></script>
+    <script>
+      // set up a global variable for the app
+      var gravityDocusignApp;
+
+      // Start the app
+      window.onload = function() {
+        const options = {
+          templates: window.mockData.templates,
+          recipients: window.mockData.recipients,
+          api: {
+            signInPerson: signInPerson,
+            sendWithEmail: sendWithEmail,
+            refreshSigningUrl: refreshSigningUrl,
+            close: close
+          }
+        };
+        const container = document.getElementById('gravity-docusign-mobile');
+
+        gravityDocusignApp = new window.GravityDocusignMobileApp(options, container);
+      }
+
+      function signInPerson(options, cb) {
+        setTimeout(function() {
+          // Good response
+          const res = {
+            envelopeId: '12341235',
+            status: 'success',
+            views: [
+              {
+                Name: 'Oliver',
+                Email: 'ohenegan@gmail.com',
+                Id: '12341232424',
+                role: 'Signer 2',
+                url: 'www.google.com',
+              },
+              {
+                Name: 'Trevor',
+                Email: 'trevorhanus@gmail.com',
+                Id: '12341234',
+                role: 'Signer 1',
+                url: 'www.google.com',
+              }
+            ]
+          };
+          cb(res);
+        }, 1500);
+      }
+
+      function sendWithEmail(options, cb) {
+        setTimeout(function() {
+          const res = {
+            envelopeId: '1212341234',
+            status: 'success'
+          };
+          cb(res);
+        }, 1500);
+      }
+
+      function refreshSigningUrl(envId, signer, returnUrl, cb) {
+        setTimeout(function() {
+          const res = {
+            url: 'http://www.google.com'
+          };
+          cb(res);
+        }, 1500);
+      }
+
+      function close() {
+        console.log('you want to close the window');
+      }
+
+    </script>
+  </body>
+</html>

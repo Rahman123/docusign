@@ -1,0 +1,27 @@
+@import "../stylesheets/utils.less";
+
+.wrapper-messages {
+  .position(fixed, 0, 0, auto, 0);
+  z-index: 200;
+  padding: .5em;
+
+  .message {
+    .flex-vertical-center();
+    padding: 1em;
+    color: white;
+    border-radius: 5px;
+    margin-bottom: 5px;
+    -webkit-box-shadow: 4px 3px 5px 0px rgba(50, 50, 50, 0.25);
+    -moz-box-shadow:    4px 3px 5px 0px rgba(50, 50, 50, 0.25);
+    box-shadow:         4px 3px 5px 0px rgba(50, 50, 50, 0.25);
+
+    &.error {
+      background: #F2DEDE;
+      color: #A94442;
+    }
+
+    .remove-icon {
+      margin-left: auto;
+    }
+  }
+}

@@ -1,0 +1,51 @@
+@import "../../node_modules/font-awesome/less/font-awesome.less";
+@import "../stylesheets/utils.less";
+
+.role-dropdown {
+
+  .Dropdown-root {
+    position: relative;
+
+    .Dropdown-control {
+      .flex-vertical-center();
+      padding: .5em;
+      background: #1B49A0;
+      color: white;
+
+      .Dropdown-arrow {
+        .fa-icon();
+        margin-left: .5em;
+        &:before {
+          content: @fa-var-caret-down;
+        }
+      }
+    }
+
+    .Dropdown-menu {
+      position: absolute;
+      background: white;
+      color: black;
+      padding: .5em;
+      min-width: 150px;
+      right: 0px;
+      margin-top: 5px;
+      z-index: 100;
+      -webkit-box-shadow: 4px 3px 5px 0px rgba(50, 50, 50, 0.25);
+      -moz-box-shadow:    4px 3px 5px 0px rgba(50, 50, 50, 0.25);
+      box-shadow:         4px 3px 5px 0px rgba(50, 50, 50, 0.25);
+
+      .Dropdown-option {
+        padding: .5em;
+
+        &:nth-child(even) {
+          background: #E8EBED;
+        }
+
+        &:focus {
+          background: #2093D9;
+          color: white;
+        }
+      }
+    }
+  }
+}
